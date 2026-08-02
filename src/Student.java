@@ -20,6 +20,11 @@ public class Student {
     public boolean isPass(){
         return marks >= 40.0;
     }
+    public static void isPass(Student obj){
+        if(obj.isPass()){
+            obj.displayDetails();
+        }
+    }
     public void updateMarks(double marks){
         this.marks=marks;
     }
@@ -37,5 +42,9 @@ public class Student {
 
         stu1.updateMarks(34.48);
         stu1.displayDetails();
+
+        isPass(stu1);
+        isPass(stu2);
+        isPass(stu3);
     }
 }
