@@ -1,4 +1,4 @@
-public class primenums {
+public class PrimeNumberTill100 {
     public static void main(String[] args){
         boolean isPrime=true;
         for(int num=2; num<=100; num++){
