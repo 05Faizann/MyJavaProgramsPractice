@@ -1,3 +1,5 @@
+package JavaBasicLogicPrograms;
+
 public class SecondLargestNum {
     public static void main(String[] args) {
         int[] arr={8, 12, 5, 19, 4, 18, 80};

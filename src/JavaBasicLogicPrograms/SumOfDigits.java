@@ -1,3 +1,5 @@
+package JavaBasicLogicPrograms;
+
 public class SumOfDigits {
     public static void main(String[] args){
         int n=5827,sum=0,num;

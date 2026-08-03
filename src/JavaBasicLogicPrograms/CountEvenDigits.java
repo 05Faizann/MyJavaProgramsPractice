@@ -1,3 +1,5 @@
+package JavaBasicLogicPrograms;
+
 public class CountEvenDigits {
     public static void main(String[] args){
         int n=4829576, num, count=0;

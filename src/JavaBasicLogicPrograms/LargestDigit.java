@@ -1,3 +1,5 @@
+package JavaBasicLogicPrograms;
+
 public class LargestDigit {
     public static void main(String[] args){
         int n=748391, num, max=0;

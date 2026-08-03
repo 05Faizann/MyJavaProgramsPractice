@@ -1,3 +1,5 @@
+package JavaBasicLogicPrograms;
+
 public class Palindrome {
     public static void main(String[] args){
         int num=12321, n, palindrome=0, org=num;

@@ -1,3 +1,5 @@
+package OOPs;
+
 public class Student {
     int id;
     String name;
@@ -11,9 +13,9 @@ public class Student {
         this.marks=marks;
     }
     public void displayDetails(){
-        System.out.println("ID of the Student: "+id);
-        System.out.println("Name of the Student: "+name);
-        System.out.println("Age of the Student: "+ age);
+        System.out.println("ID of the OOPs.Student: "+id);
+        System.out.println("Name of the OOPs.Student: "+name);
+        System.out.println("Age of the OOPs.Student: "+ age);
         System.out.println("Marks of the student: "+marks);
         System.out.println("Is Pass?: "+ isPass()+ "\n");
     }

@@ -1,3 +1,5 @@
+package JavaBasicLogicPrograms;
+
 public class PrimeNumberTill100 {
     public static void main(String[] args){
         boolean isPrime=true;

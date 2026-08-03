@@ -1,4 +1,6 @@
-public class evenodd {
+package JavaBasicLogicPrograms;
+
+public class EvenOddNumber {
     public static void main(String[] args){
         int num = 76;
 

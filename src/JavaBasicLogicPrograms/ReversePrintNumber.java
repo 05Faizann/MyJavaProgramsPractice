@@ -1,4 +1,6 @@
-public class digitcounter {
+package JavaBasicLogicPrograms;
+
+public class ReversePrintNumber {
     public static void main(String[] args){
         int num = 12345,rev=0, n=0;
         while(num>0){

@@ -1,4 +1,6 @@
-public class experiment {
+package JavaBasicLogicPrograms;
+
+public class SubsetOfArray {
     public static void main(String[] args){
         int[] a={11, 7, 1, 13, 21, 3, 7, 3};
         int[] b={11, 3, 7, 1, 7};
