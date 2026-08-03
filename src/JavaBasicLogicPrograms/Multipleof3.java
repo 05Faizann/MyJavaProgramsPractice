@@ -1,6 +1,6 @@
 package JavaBasicLogicPrograms;
 
-public class multipleof3 {
+public class Multipleof3 {
     public static void main(String[] args){
         for(int i = 0; i <= 30; i++){
             if(i%3==0){
