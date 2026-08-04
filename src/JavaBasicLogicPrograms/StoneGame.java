@@ -1,9 +1,7 @@
 package JavaBasicLogicPrograms;
 
 public class StoneGame {
-    public static boolean stonegame(int[] piles){
-        return true;
-    }
+
     public static void main(String[] args){
         int[] piles={3, 8, 2, 3};
         int low=0;
