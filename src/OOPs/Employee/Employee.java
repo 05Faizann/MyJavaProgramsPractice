@@ -45,5 +45,7 @@ class Main {
         for(Employee e : employees){
             System.out.println(e.calculateSalary());
         }
+        Manager m=new Manager(2, "kanan", 60000, 6000);
+        System.out.println(m.calculateSalary());
     }
 }
