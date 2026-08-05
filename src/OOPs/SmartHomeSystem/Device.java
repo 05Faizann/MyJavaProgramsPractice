@@ -6,18 +6,18 @@ interface Device {
     void getStatus();
 }
 class Fan implements Device{
-    boolean On=false;
+    private boolean isOn=false;
     @Override
     public void turnOn(){
-        On=true;
+        isOn=true;
     }
     @Override
     public void turnOff(){
-        On=false;
+        isOn=false;
     }
     @Override
     public void getStatus(){
-        if (On){
+        if (isOn){
             System.out.println("Fan is turned on.\n");
         }else {
             System.out.println("Fan is turned off.\n");
@@ -25,18 +25,18 @@ class Fan implements Device{
     }
 }
 class Light implements Device{
-    boolean On=false;
+    private boolean isOn=false;
     @Override
     public void turnOn(){
-        On=true;
+        isOn=true;
     }
     @Override
     public void turnOff(){
-        On=false;
+        isOn=false;
     }
     @Override
     public void getStatus(){
-        if (On){
+        if (isOn){
             System.out.println("Light is turned on.\n");
         }else {
             System.out.println("Light is turned off.\n");
@@ -44,18 +44,18 @@ class Light implements Device{
     }
 }
 class AC implements Device{
-    boolean On=false;
+    private boolean isOn=false;
     @Override
     public void turnOn(){
-        On=true;
+        isOn=true;
     }
     @Override
     public void turnOff(){
-        On=false;
+        isOn=false;
     }
     @Override
     public void getStatus(){
-        if (On){
+        if (isOn){
             System.out.println("AC is turned on.\n");
         }else {
             System.out.println("AC is turned off.\n");
