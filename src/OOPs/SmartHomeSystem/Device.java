@@ -64,8 +64,13 @@ class AC implements Device{
 }
 class Room{
     Device[] devices;
-    public void addDevice(){
-
+    Room(int capacity){
+        devices=new Device[capacity];
+    }
+    public void addDevice(Device device){
+        for(int i=0; i<devices.length; i++){
+            devices[0]=device;
+        }
     }
     public void showStatus(){
         for (Device d : devices){
@@ -80,6 +85,12 @@ class Room{
 }
 class Main{
     public static void main(String[] args){
-        Room Myroom=new Room();
+        Room r=new Room(1);
+            r.addDevice(new Fan());
+            r.devices[0].getStatus();
+            r.devices[0].turnOn();
+            r.showStatus();
+            r.addDevice(new Light());
+            r.showStatus();
     }
 }
