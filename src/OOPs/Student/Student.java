@@ -13,9 +13,9 @@ public class Student {
         this.marks=marks;
     }
     public void displayDetails(){
-        System.out.println("ID of the OOPs.Student.Student: "+id);
-        System.out.println("Name of the OOPs.Student.Student: "+name);
-        System.out.println("Age of the OOPs.Student.Student: "+ age);
+        System.out.println("ID of the student: "+id);
+        System.out.println("Name of the student: "+name);
+        System.out.println("Age of the student: "+ age);
         System.out.println("Marks of the student: "+marks);
         System.out.println("Is Pass?: "+ isPass()+ "\n");
     }

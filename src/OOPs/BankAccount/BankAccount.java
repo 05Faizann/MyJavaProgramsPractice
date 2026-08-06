@@ -23,11 +23,11 @@ public class BankAccount {
         }
     }
     public void withdrawl(double amount){
-        if(amount<=this.balance){
+        if(amount>0 && amount<=this.balance){
             this.balance=this.balance-amount;
-            System.out.println("Withdrawl successfull. Remaining balance: " + this.balance + "\n");
+            System.out.println("Withdrawal successful. Remaining balance: " + this.balance + "\n");
         }else{
-            System.out.println("Withdrawl limit exceeded\n");
+            System.out.println("Withdrawal limit exceeded\n");
         }
     }
     public void displayBalance(){
