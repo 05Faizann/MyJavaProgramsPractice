@@ -17,17 +17,20 @@ package JavaBasicLogicPrograms;
 
 public class LongestCommonPrefix {
     public static void main(String[] args){
-        String[] strs = {"flower","flow","flight", "f"};
+        String[] strs = {"cir", "car"};
         String c="";
         for(int i=0; i< strs[0].length(); i++){
             int count=0;
             for(int j=0; j<strs.length; j++){
                 if(i<strs[j].length()){
-                if(strs[0].charAt(i)==strs[j].charAt(i)){
-                    count++;
-                }}
+                    if(strs[0].charAt(i)==strs[j].charAt(i)){
+                        count++;
+                    }
+                }
             }if(count==strs.length){
                 c=c.concat(String.valueOf(strs[0].charAt(i)));
+            }else{
+                break;
             }
         }
         System.out.println(c);
