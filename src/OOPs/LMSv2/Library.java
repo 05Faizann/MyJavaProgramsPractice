@@ -11,7 +11,12 @@ public class Library {
     }
     public void displayBooks(){
         for(Book book : books){
-            System.out.print(book.getTitle() + " ");
+            System.out.print(book.getTitle());
+            if(isAvailable(book.getTitle())){
+                System.out.print("(Available) ");
+            }else{
+                System.out.print("(Unavailable) ");
+            }
         }
         System.out.println();
     }
@@ -21,6 +26,7 @@ public class Library {
                 System.out.print(book.getTitle() + " ");
             }
         }
+        System.out.println();
     }
     public boolean isAvailable(String str){
         for(Book book : books){
@@ -40,6 +46,9 @@ public class Library {
         }
         return null;
     }
+    public void setAvailibilityTrue(String str){
+        getBook(str).setAvailabilityTrue();
+    }
     public void setAvailibilityFalse(String str){
         getBook(str).setAvailabilityFalse();
     }
@@ -58,6 +67,9 @@ class Book{
     }
     public boolean getAvailability(){
         return availability;
+    }
+    public void setAvailabilityTrue(){
+        availability=true;
     }
     public void setAvailabilityFalse(){
         availability=false;
@@ -82,7 +94,12 @@ class Student{
         if(library.isAvailable(str)){
             borrowed.add(library.getBook(str));
             library.setAvailibilityFalse(str);
+        }else {
+            System.out.println("Book not available.");
         }
+    }
+    public void returnBook(String str){
+        library.setAvailibilityTrue(str);
     }
     public void displayBorrowedBooks() {
         for (Book book : borrowed) {
@@ -108,5 +125,8 @@ class Main{
         stu.displayBorrowedBooks();
         library.displayBooks();
         library.displayAvailableBooks();
+        stu.returnBook("Mathematics");
+        library.displayAvailableBooks();
+        library.displayBooks();
     }
 }
