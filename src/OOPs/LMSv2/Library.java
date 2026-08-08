@@ -87,7 +87,7 @@ class Librarian{
 class User{
     private int id;
     private String userName;
-    public Library library;
+    private Library library;
     private ArrayList<Book> borrowed=new ArrayList<>();
     User(int id, String userName, Library library){
         this.id=id;
@@ -104,7 +104,9 @@ class User{
         }
     }
     public void returnBook(String str){
+        System.out.println(this.userName + " has returned " + str);
         library.setAvailibilityTrue(str);
+        borrowed.remove(library.getBook(str));
     }
     public void displayBorrowedBooks() {
         System.out.print(this.userName + " has borrowed: ");
@@ -143,6 +145,8 @@ class Main{
         mahesh.returnBook("Python");
         library.displayBooks();
         suresh.borrowBook("OOPs");
+        suresh.displayBorrowedBooks();
+        suresh.returnBook("Mathematics");
         suresh.displayBorrowedBooks();
     }
 }
