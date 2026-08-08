@@ -84,14 +84,19 @@ class Librarian{
         library.addBook(book);
     }
 }
-class Student{
-    private Library library;
+class User{
+    private int id;
+    private String userName;
+    public Library library;
     private ArrayList<Book> borrowed=new ArrayList<>();
-    Student(Library library){
+    User(int id, String userName, Library library){
+        this.id=id;
+        this.userName=userName;
         this.library=library;
     }
     public void borrowBook(String str){
         if(library.isAvailable(str)){
+            System.out.println(this.userName + " just borrowed " + str);
             borrowed.add(library.getBook(str));
             library.setAvailibilityFalse(str);
         }else {
@@ -102,9 +107,16 @@ class Student{
         library.setAvailibilityTrue(str);
     }
     public void displayBorrowedBooks() {
+        System.out.print(this.userName + " has borrowed: ");
         for (Book book : borrowed) {
-            System.out.println(book.getTitle());
+            System.out.print(book.getTitle() + " ");
         }
+        System.out.println();
+    }
+}
+class Student extends User{
+    Student(int id, String userName, Library library) {
+        super(id, userName, library);
     }
 }
 class Main{
@@ -120,13 +132,17 @@ class Main{
         Librarian librarian=new Librarian(library);
         librarian.addBook(maths);
         library.displayBooks();
-        Student stu=new Student(library);
-        stu.borrowBook("Mathematics");
-        stu.displayBorrowedBooks();
+        Student suresh=new Student(1, "Suresh", library);
+        suresh.borrowBook("Mathematics");
+        suresh.displayBorrowedBooks();
         library.displayBooks();
-        library.displayAvailableBooks();
-        stu.returnBook("Mathematics");
-        library.displayAvailableBooks();
+        Student mahesh=new Student(2, "Mahesh", library);
+        mahesh.borrowBook("Python");
         library.displayBooks();
+        mahesh.displayBorrowedBooks();
+        mahesh.returnBook("Python");
+        library.displayBooks();
+        suresh.borrowBook("OOPs");
+        suresh.displayBorrowedBooks();
     }
 }
