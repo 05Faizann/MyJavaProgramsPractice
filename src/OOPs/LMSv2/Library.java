@@ -46,11 +46,11 @@ public class Library {
         }
         return null;
     }
-    public void setAvailibilityTrue(String str){
-        getBook(str).setAvailabilityTrue();
+    public void returnBook(String str){
+        getBook(str).returnBook();
     }
-    public void setAvailibilityFalse(String str){
-        getBook(str).setAvailabilityFalse();
+    public void borrowBook(String str){
+        getBook(str).borrowBook();
     }
 
 }
@@ -68,10 +68,10 @@ class Book{
     public boolean getAvailability(){
         return availability;
     }
-    public void setAvailabilityTrue(){
+    public void returnBook(){
         availability=true;
     }
-    public void setAvailabilityFalse(){
+    public void borrowBook(){
         availability=false;
     }
 }
@@ -98,14 +98,14 @@ class User{
         if(library.isAvailable(str)){
             System.out.println(this.userName + " just borrowed " + str);
             borrowed.add(library.getBook(str));
-            library.setAvailibilityFalse(str);
+            library.borrowBook(str);
         }else {
             System.out.println("Book not available.");
         }
     }
     public void returnBook(String str){
         System.out.println(this.userName + " has returned " + str);
-        library.setAvailibilityTrue(str);
+        library.returnBook(str);
         borrowed.remove(library.getBook(str));
     }
     public void displayBorrowedBooks() {
